@@ -1,0 +1,113 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  margin-top: 20px;
+}
+
+body {
+  background-color: black;
+  max-width: 100%;
+}
+
+.answer {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding-right: 50px;
+}
+.answer div {
+  font-size: 30px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.numeric .formula-match {
+  grid-template-columns: repeat(4, 1fr);
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.formula .formula-match {
+  grid-template-columns: repeat(3, 1fr);
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.formula .formula-match:first-child {
+  grid-template-columns: auto auto 1rf;
+  gap: 0;
+}
+
+.formula .formula-match:first-child div {
+  min-width: 90px;
+  &:nth-child(1) {
+    margin-right: 0;
+    border-radius: 12px 0 0 12px;
+  }
+  &:nth-child(2) {
+    border-radius: 0 12px 12px 0;
+  }
+  &:nth-child(3) {
+    margin-left: 6px;
+  }
+}
+.formula .formula-match div {
+  min-width: 90px;
+}
+
+.formula-match {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 6px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2c2f39;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    min-width: 68px;
+    border-radius: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .up {
+    display: grid;
+    grid-template-areas: "satu", "dua";
+
+    .numeric {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+
+    .formula-match div {
+      min-height: 30px;
+    }
+    /* .formula .formula-match {
+      &:nth-child(1) {
+        border-right: none;
+      }
+      &:nth-child(2) {
+        border-left: none;
+      }
+    } */
+  }
+}
